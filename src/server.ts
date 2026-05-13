@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import { createServer } from "http";
 import { app, allowedOrigin } from "./app";
 import { connectRedis } from "./config/redis";
@@ -9,9 +12,9 @@ const server = createServer(app);
 configureSocket(server, allowedOrigin);
 
 const start = async () => {
-  void connectRedis();
+  await connectRedis();
 
-  server.listen(port, () => {
+  server.listen(port, "0.0.0.0", () => {
     console.log(`SyncUp backend listening on http://localhost:${port}`);
   });
 };
