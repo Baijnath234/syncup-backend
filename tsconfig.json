@@ -4,6 +4,10 @@
     "outDir": "./dist",
     "module": "commonjs",
     "target": "es2020",
+    "baseUrl": ".",
+    "paths": {
+      "@prisma/client": ["node_modules/.prisma/client"]
+    },
     "lib": ["es2020"],
     "types": ["node"],
     "esModuleInterop": true,
@@ -11,6 +15,7 @@
     "sourceMap": true,
     "noUncheckedIndexedAccess": true,
     "strict": true,
+    "ignoreDeprecations": "6.0",
     "skipLibCheck": true
   },
   "include": ["src/**/*.ts"]
