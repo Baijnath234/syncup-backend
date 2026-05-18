@@ -10,7 +10,7 @@ import applicationRoutes from "./routes/application.routes";
 import aiRoutes from "./routes/ai.routes";
 
 import { errorHandler, notFoundHandler } from "./middlewares/error.middleware";
-import { prisma } from "./prisma/client";
+import { prisma } from "./config/db";
 
 export const app = express();
 
